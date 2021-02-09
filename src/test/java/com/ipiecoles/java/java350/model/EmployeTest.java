@@ -70,6 +70,19 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
 
 
 
+    @Test
+    public void getPrimeAnnuelleMatriculNull(){
+        //Given
+        Employe employe = new Employe("Doe", "John", null, LocalDate.now(), 1500d, 1, 1.0);
+
+        //When
+        Double prime = employe.getPrimeAnnuelle();
+
+        //Then
+        Assertions.assertThat(prime).isEqualTo(1000.0);
+
+    }
+
 
 
 
