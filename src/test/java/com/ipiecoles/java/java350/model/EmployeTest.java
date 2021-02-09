@@ -3,6 +3,8 @@ package com.ipiecoles.java.java350.model;
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.time.LocalDate;
 
@@ -39,28 +41,33 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
 
 }
 
-    @Test
-    public void testGetPrimeAnnuele(){
+    @ParameterizedTest(name = "Perf {0}, matriclule {1}, txActiite {2}, anciennte {3}=>prime{4}")
+    @CsvSource({
+            "1, 'T12345', 1.0, 0, 1000.0",
+            "1, 'T12345', 0.5,0, 500.0",
+            "2, 'T12345', 1.0, 0, 2300.0",
+            "1, 'T12345', 1.0, 2, 1200.0",
+    })
+    public void testGetPrimeAnnuele(Integer performance, String matricul, Double tauxActivite, Long nbAnnesAnciente,
+                                    Double primeAttendu){
         //Given
-        Integer perfomance = 1;
-        String matricul ="T12345";
-        Double tauxActivite = 1.0;
-        Long nbAnnesAnciennete = 0L;
 
 
         Employe employe = new Employe("Doe", "jhon", matricul,
-                LocalDate.now().minusYears(nbAnnesAnciennete), 1500d,
-                perfomance,tauxActivite);
+                LocalDate.now().minusYears(nbAnnesAnciente), 1500d,
+                performance,tauxActivite);
 
         //When
         Double prime = employe.getPrimeAnnuelle();
 
         //Then
-        Double primeAttendue=1000.0;
-        Assertions.assertThat(prime).isEqualTo(primeAttendue);
+
+        Assertions.assertThat(prime).isEqualTo(primeAttendu);
 
 
     }
+
+
 
 
 
