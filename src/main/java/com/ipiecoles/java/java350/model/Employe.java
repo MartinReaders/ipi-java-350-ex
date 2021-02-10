@@ -78,7 +78,7 @@ public class Employe {
      * au prorata du temps d'activité
      */
     public Integer getNbRtt(LocalDate dateReference) {
-        int nbJoursAnne = dateReference.isLeapYear() ? 366 : 365;
+        int nbJoursAnnee = dateReference.isLeapYear() ? 366 : 365;
         int nbSamediDimanche = 104;
         switch (LocalDate.of(dateReference.getYear(), 1, 1).getDayOfWeek()) {
             case THURSDAY:
@@ -90,26 +90,24 @@ public class Employe {
                 if (dateReference.isLeapYear()) {
                     nbSamediDimanche = nbSamediDimanche + 2;
                 }
-                else{
+                else {
                     nbSamediDimanche = nbSamediDimanche + 1;
                 }
                 break;
-
             case SATURDAY:
                 nbSamediDimanche = nbSamediDimanche + 1;
                 break;
         }
-        int nbJoursFeriesSemain = (int) Entreprise.joursFeries(dateReference).stream().filter(localDate ->
+        int nbJoursFeriesSemaine = (int) Entreprise.joursFeries(dateReference).stream().filter(localDate ->
                 localDate.getDayOfWeek().getValue() <= DayOfWeek.FRIDAY.getValue()).count();
         return (int) Math.ceil((
-                nbJoursAnne
+                nbJoursAnnee
                         - Entreprise.NB_JOURS_MAX_FORFAIT
                         - nbSamediDimanche
                         - Entreprise.NB_CONGES_BASE
-                        - nbJoursFeriesSemain
-            ) * tempsPartiel);
+                        - nbJoursFeriesSemaine
+        ) * tempsPartiel);
     }
-
     /**
      * Calcul de la prime annuelle selon la règle :
      * Pour les managers : Prime annuelle de base bonnifiée par l'indice prime manager
