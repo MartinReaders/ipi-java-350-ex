@@ -106,6 +106,7 @@ public class Employe {
                         - nbSamediDimanche
                         - Entreprise.NB_CONGES_BASE
                         - nbJoursFeriesSemaine
+
         ) * tempsPartiel);
     }
     /**
