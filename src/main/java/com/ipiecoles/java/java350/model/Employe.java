@@ -89,13 +89,14 @@ public class Employe {
             case FRIDAY:
                 if (dateReference.isLeapYear()) {
                     nbSamediDimanche = nbSamediDimanche + 2;
-                }
-                else {
+                } else {
                     nbSamediDimanche = nbSamediDimanche + 1;
                 }
                 break;
             case SATURDAY:
                 nbSamediDimanche = nbSamediDimanche + 1;
+                break;
+            default:
                 break;
         }
         int nbJoursFeriesSemaine = (int) Entreprise.joursFeries(dateReference).stream().filter(localDate ->

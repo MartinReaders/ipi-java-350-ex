@@ -173,4 +173,33 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
     }
 
 
+    /**
+     *
+     * @param year
+     * @param month
+     * @param day
+     * @param res
+     */
+
+    @ParameterizedTest
+    @CsvSource({
+            "2019, 12, 12, 8",
+            "2021, 12, 1, 10",
+            "2022, 5, 12, 10",
+            "2032, 4, 4, 11"
+    })
+    void testNbRtt(Integer year, Integer month, Integer day, Integer res) {
+        //GIVEN
+        Employe employe = new Employe();
+
+        //WHEN
+        Integer rttnbJ = employe.getNbRtt(LocalDate.of(year, month, day));
+
+        //THE
+        assertThat(rttnbJ).isEqualTo(res);
+    }
+
+
+
+
 }
