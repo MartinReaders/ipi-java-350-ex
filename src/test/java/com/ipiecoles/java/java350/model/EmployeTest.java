@@ -1,10 +1,13 @@
 package com.ipiecoles.java.java350.model;
 
 import com.ipiecoles.java.java350.model.Employe;
+import org.assertj.core.api.Assert;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.time.LocalDate;
 
@@ -85,6 +88,89 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
 
 
 
+    @Test
+    /**
+     * > employe.augmenterSalaire(null)) ->si procontage null
+     *
+     *  hasMessageContaining("Null proc")->si le retourr de message contien Null proc
+     */
+
+    public void augmenterSalaireProcentNull(){
+
+        //GIVEN
+        Employe employe = new Employe("Doe", "John", null, LocalDate.now(), 1500d, 1, 1.0);
+
+        //Then
+        assertThatThrownBy(() -> employe.augmenterSalaire(null)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Null proc");
+
+
+
+
+    }
+
+
+    @Test
+    /**
+     * > salore nulle
+     *
+     *  hasMessageContaining("slaire est null")->si le retourr de message contien slaire est null
+     */
+
+    public void augmenterSalaireSaliretNull(){
+
+        //GIVEN
+        Employe employe = new Employe("Doe", "John", null, LocalDate.now(), null, 1, 1.0);
+
+        //Then
+        assertThatThrownBy(() -> employe.augmenterSalaire(null)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("slaire est null");
+
+
+
+
+    }
+
+
+
+    @Test
+    /**
+     * > salore negative
+     *
+     *  hasMessageContaining("slaire negative")->si le retourr de message contien slaire negative
+     */
+
+    public void augmenterSalaireSaliretNegative(){
+
+        //GIVEN
+        Employe employe = new Employe("Doe", "John", null, LocalDate.now(), -1500d, 1, 1.0);
+
+        //Then
+        assertThatThrownBy(() -> employe.augmenterSalaire(null)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("slaire negative");
+
+
+
+
+    }
+
+
+    @Test
+    /**
+     * Procontage negative
+     *
+     *  hasMessageContaining("negattive proc")->si le retourr de message contien negattive proc
+     */
+
+    public void augmenterSalaireProcNegative(){
+
+        //GIVEN
+        Employe employe = new Employe("Doe", "John", null, LocalDate.now(), 1500d, 1, 1.0);
+
+        //Then
+        assertThatThrownBy(() -> employe.augmenterSalaire(-10d)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("negattive proc");
+
+
+
+
+    }
 
 
 }

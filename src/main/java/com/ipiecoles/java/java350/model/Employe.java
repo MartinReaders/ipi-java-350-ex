@@ -145,7 +145,28 @@ public class Employe {
     }
 
     //Augmenter salaire
-    //public void augmenterSalaire(double pourcentage){}
+    public void augmenterSalaire(Double pourcentage) throws IllegalArgumentException{
+            if(this.salaire == null) {
+                throw new IllegalArgumentException("slaire est null");
+            }
+
+            if(this.salaire < 0) {
+                throw new IllegalArgumentException("slaire negative");
+            }
+
+            if(pourcentage != null) {
+                if(pourcentage > 0) {
+                    this.salaire = this.salaire + this.salaire * (pourcentage / 100D);
+                } else if(pourcentage < 0) {
+                    throw new IllegalArgumentException("negattive proc");
+                }
+            } else {
+                throw new IllegalArgumentException("Null proc");
+            }
+        }
+
+
+
 
     public Long getId() {
         return id;
