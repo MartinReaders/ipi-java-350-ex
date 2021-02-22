@@ -1,17 +1,20 @@
 package com.ipiecoles.java.java350.model;
 
 import com.ipiecoles.java.java350.model.Employe;
+import org.assertj.core.api.Assert;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.time.LocalDate;
 
-public class  EmployeTest {
+class  EmployeTest {
 
 @Test
-public void testGetNBAnneAncienteDateEmbaucheNull(){
+void testGetNBAnneAncienteDateEmbaucheNull(){
 
     //GIVEN
     Employe employe = new Employe();
@@ -22,12 +25,12 @@ public void testGetNBAnneAncienteDateEmbaucheNull(){
     Integer nbAnneeAnciennte = employe.getNombreAnneeAnciennete();
 
     //THEN, négative, 0 , null
-    Assertions.assertThat(nbAnneeAnciennte);
+    Assertions.assertThat(nbAnneeAnciennte).isNull();
 
 }
 
 @Test
-public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
+void testGetNbAnneAncienteDateEbaucheInfoNow(){
     //GIVEN
     Employe employe = new Employe("Doe", "Jhn", "T12345",
             LocalDate.of(2015,8,21), 1500d,1,1.0);
@@ -37,7 +40,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
     Integer anneAnciennete = employe.getNombreAnneeAnciennete();
 
     //THEN
-    Assertions.assertThat(anneAnciennete).isGreaterThanOrEqualTo(0);
+    Assertions.assertThat(anneAnciennete).isNotNegative();
 
 }
 
@@ -48,7 +51,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
             "2, 'T12345', 1.0, 0, 2300.0",
             "1, 'T12345', 1.0, 2, 1200.0",
     })
-    public void testGetPrimeAnnuele(Integer performance, String matricul, Double tauxActivite, Long nbAnnesAnciente,
+    void testGetPrimeAnnuele(Integer performance, String matricul, Double tauxActivite, Long nbAnnesAnciente,
                                     Double primeAttendu){
         //Given
 
@@ -71,7 +74,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
 
 
     @Test
-    public void getPrimeAnnuelleMatriculNull(){
+    void getPrimeAnnuelleMatriculNull(){
         //Given
         Employe employe = new Employe("Doe", "John", null, LocalDate.now(), 1500d, 1, 1.0);
 
@@ -82,6 +85,120 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
         Assertions.assertThat(prime).isEqualTo(1000.0);
 
     }
+
+
+
+    @Test
+    /**
+     * > employe.augmenterSalaire(null)) ->si procontage null
+     *
+     *  hasMessageContaining("Null proc")->si le retourr de message contien Null proc
+     */
+
+    void augmenterSalaireProcentNull(){
+
+        //GIVEN
+        Employe employe = new Employe("Doe", "John", null, LocalDate.now(), 1500d, 1, 1.0);
+
+        //Then
+        assertThatThrownBy(() -> employe.augmenterSalaire(null)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Null proc");
+
+
+
+
+    }
+
+
+    @Test
+    /**
+     * > salore nulle
+     *
+     *  hasMessageContaining("slaire est null")->si le retourr de message contien slaire est null
+     */
+
+    void augmenterSalaireSaliretNull(){
+
+        //GIVEN
+        Employe employe = new Employe("Doe", "John", null, LocalDate.now(), null, 1, 1.0);
+
+        //Then
+        assertThatThrownBy(() -> employe.augmenterSalaire(null)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("slaire est null");
+
+
+
+
+    }
+
+
+
+    @Test
+    /**
+     * > salore negative
+     *
+     *  hasMessageContaining("slaire negative")->si le retourr de message contien slaire negative
+     */
+
+    void augmenterSalaireSaliretNegative(){
+
+        //GIVEN
+        Employe employe = new Employe("Doe", "John", null, LocalDate.now(), -1500d, 1, 1.0);
+
+        //Then
+        assertThatThrownBy(() -> employe.augmenterSalaire(null)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("slaire negative");
+
+
+
+
+    }
+
+
+    @Test
+    /**
+     * Procontage negative
+     *
+     *  hasMessageContaining("negattive proc")->si le retourr de message contien negattive proc
+     */
+
+    void augmenterSalaireProcNegative(){
+
+        //GIVEN
+        Employe employe = new Employe("Doe", "John", null, LocalDate.now(), 1500d, 1, 1.0);
+
+        //Then
+        assertThatThrownBy(() -> employe.augmenterSalaire(-10d)).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("negattive proc");
+
+
+
+
+    }
+
+
+    /**
+     *
+     * @param year
+     * @param month
+     * @param day
+     * @param res
+     */
+
+    @ParameterizedTest
+    @CsvSource({
+            "2019, 12, 12, 8",
+            "2021, 12, 1, 10",
+            "2022, 5, 12, 10",
+            "2032, 4, 4, 11"
+    })
+    void testNbRtt(Integer year, Integer month, Integer day, Integer res) {
+        //GIVEN
+        Employe employe = new Employe();
+
+        //WHEN
+        Integer rttnbJ = employe.getNbRtt(LocalDate.of(year, month, day));
+
+        //THE
+        assertThat(rttnbJ).isEqualTo(res);
+    }
+
 
 
 

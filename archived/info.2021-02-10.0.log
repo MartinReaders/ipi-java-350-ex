@@ -1,0 +1,44 @@
+2021-02-10 12:11:55 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 12:11:55 - WARN  - Aucun matricule trouvé, matricule intitial affecté
+2021-02-10 13:01:52 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:01:52 - WARN  - Aucun matricule trouvé, matricule intitial affecté
+2021-02-10 13:08:40 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:08:40 - WARN  - Aucun matricule trouvé, matricule intitial affecté
+2021-02-10 13:08:41 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:08:41 - WARN  - Aucun matricule trouvé, matricule intitial affecté
+2021-02-10 13:08:41 - ERROR - L'employé de matriculeT00001 existe déjà en BDD
+2021-02-10 13:08:41 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:08:41 - ERROR - Limite des 100000 matricules atteinte !
+2021-02-10 13:10:53 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:10:53 - WARN  - Aucun matricule trouvé, matricule initial affecté
+2021-02-10 13:10:53 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:10:53 - WARN  - Aucun matricule trouvé, matricule initial affecté
+2021-02-10 13:10:53 - ERROR - L'employé de matricule T00001 existe déjà en BDD
+2021-02-10 13:10:53 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:10:53 - ERROR - Limite des 100000 matricules atteinte !
+2021-02-10 13:48:55 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:48:55 - WARN  - Aucun matricule trouvé, matricule initial affecté
+2021-02-10 13:48:55 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:48:55 - WARN  - Aucun matricule trouvé, matricule initial affecté
+2021-02-10 13:48:55 - ERROR - L'employé de matricule T00001 existe déjà en BDD
+2021-02-10 13:48:55 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 13:48:55 - ERROR - Limite des 100000 matricules atteinte !
+2021-02-10 14:11:35 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 14:11:35 - WARN  - Aucun matricule trouvé, matricule initial affecté
+2021-02-10 14:11:35 - INFO  - Employé créé : com.ipiecoles.java.java350.model.Employe@a17e292b
+2021-02-10 14:11:53 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 14:11:53 - WARN  - Aucun matricule trouvé, matricule initial affecté
+2021-02-10 14:11:54 - INFO  - Employé créé : com.ipiecoles.java.java350.model.Employe@a17e292b
+2021-02-10 14:11:54 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 14:11:54 - WARN  - Aucun matricule trouvé, matricule initial affecté
+2021-02-10 14:11:54 - ERROR - L'employé de matricule T00001 existe déjà en BDD
+2021-02-10 14:11:54 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 14:11:54 - ERROR - Limite des 100000 matricules atteinte !
+2021-02-10 14:33:19 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 14:33:19 - WARN  - Aucun matricule trouvé, matricule initial affecté
+2021-02-10 14:33:19 - INFO  - Employé créé : com.ipiecoles.java.java350.model.Employe@a17e292b
+2021-02-10 14:33:20 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 14:33:20 - WARN  - Aucun matricule trouvé, matricule initial affecté
+2021-02-10 14:33:20 - ERROR - L'employé de matricule T00001 existe déjà en BDD
+2021-02-10 14:33:20 - INFO  - Embauche d'un employé avec les infos suivantes : nom : Doe, prénom : John, poste TECHNICIEN, niveau d'étude : BTS_IUT, taux activité : 1.0
+2021-02-10 14:33:20 - ERROR - Limite des 100000 matricules atteinte !
