@@ -40,7 +40,7 @@ void testGetNbAnneAncienteDateEbaucheInfoNow(){
     Integer anneAnciennete = employe.getNombreAnneeAnciennete();
 
     //THEN
-    Assertions.assertThat(anneAnciennete).isGreaterThanOrEqualTo(0);
+    Assertions.assertThat(anneAnciennete).isZero();
 
 }
 
