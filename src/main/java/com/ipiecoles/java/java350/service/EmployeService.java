@@ -69,6 +69,24 @@ public class EmployeService {
         logger.info("Employé créé : {}", employe.toString());
     }
 
+    /**
+     * Méthode calculant la performance d'un commercial en fonction de ses objectifs et du chiffre d'affaire traité dans l'année.
+     * Cette performance lui est affectée et sauvegardée en BDD
+     *
+     * 1 : Si le chiffre d'affaire est inférieur de plus de 20% à l'objectif fixé, le commercial retombe à la performance de base
+     * 2 : Si le chiffre d'affaire est inférieur entre 20% et 5% par rapport à l'ojectif fixé, il perd 2 de performance (dans la limite de la performance de base)
+     * 3 : Si le chiffre d'affaire est entre -5% et +5% de l'objectif fixé, la performance reste la même.
+     * 4 : Si le chiffre d'affaire est supérieur entre 5 et 20%, il gagne 1 de performance
+     * 5 : Si le chiffre d'affaire est supérieur de plus de 20%, il gagne 4 de performance
+     *
+     * Si la performance ainsi calculée est supérieure à la moyenne des performances des commerciaux, il reçoit + 1 de performance.
+     *
+     * @param matricule le matricule du commercial
+     * @param caTraite le chiffre d'affaire traité par le commercial pendant l'année
+     * @param objectifCa l'object de chiffre d'affaire qui lui a été fixé
+     *
+     * @throws EmployeException Si le matricule est null ou ne commence pas par un C
+     */
     public void calculPerformanceCommercial(String matricule, Long caTraite, Long objectifCa) throws EmployeException {
         //Vérification des paramètres d'entrée
         if(caTraite == null || caTraite < 0){
@@ -115,5 +133,4 @@ public class EmployeService {
         employe.setPerformance(performance);
         employeRepository.save(employe);
     }
-
 }
