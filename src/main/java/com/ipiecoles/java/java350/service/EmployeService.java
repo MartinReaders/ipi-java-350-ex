@@ -70,7 +70,6 @@ public class EmployeService {
         employeRepository.save(employe);
 
     }
-
     /**
      * Méthode calculant la performance d'un commercial en fonction de ses objectifs et du chiffre d'affaire traité dans l'année.
      * Cette performance lui est affectée et sauvegardée en BDD.

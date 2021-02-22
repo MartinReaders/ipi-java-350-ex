@@ -25,7 +25,7 @@ void testGetNBAnneAncienteDateEmbaucheNull(){
     Integer nbAnneeAnciennte = employe.getNombreAnneeAnciennete();
 
     //THEN, négative, 0 , null
-    Assertions.assertThat(nbAnneeAnciennte);
+    Assertions.assertThat(nbAnneeAnciennte).isNull();
 
 }
 
