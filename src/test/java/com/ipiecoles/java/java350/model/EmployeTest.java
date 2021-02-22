@@ -11,10 +11,10 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.time.LocalDate;
 
-public class  EmployeTest {
+class  EmployeTest {
 
 @Test
-public void testGetNBAnneAncienteDateEmbaucheNull(){
+void testGetNBAnneAncienteDateEmbaucheNull(){
 
     //GIVEN
     Employe employe = new Employe();
@@ -30,7 +30,7 @@ public void testGetNBAnneAncienteDateEmbaucheNull(){
 }
 
 @Test
-public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
+void testGetNbAnneAncienteDateEbaucheInfoNow(){
     //GIVEN
     Employe employe = new Employe("Doe", "Jhn", "T12345",
             LocalDate.of(2015,8,21), 1500d,1,1.0);
@@ -51,7 +51,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
             "2, 'T12345', 1.0, 0, 2300.0",
             "1, 'T12345', 1.0, 2, 1200.0",
     })
-    public void testGetPrimeAnnuele(Integer performance, String matricul, Double tauxActivite, Long nbAnnesAnciente,
+    void testGetPrimeAnnuele(Integer performance, String matricul, Double tauxActivite, Long nbAnnesAnciente,
                                     Double primeAttendu){
         //Given
 
@@ -74,7 +74,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
 
 
     @Test
-    public void getPrimeAnnuelleMatriculNull(){
+    void getPrimeAnnuelleMatriculNull(){
         //Given
         Employe employe = new Employe("Doe", "John", null, LocalDate.now(), 1500d, 1, 1.0);
 
@@ -95,7 +95,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
      *  hasMessageContaining("Null proc")->si le retourr de message contien Null proc
      */
 
-    public void augmenterSalaireProcentNull(){
+    void augmenterSalaireProcentNull(){
 
         //GIVEN
         Employe employe = new Employe("Doe", "John", null, LocalDate.now(), 1500d, 1, 1.0);
@@ -116,7 +116,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
      *  hasMessageContaining("slaire est null")->si le retourr de message contien slaire est null
      */
 
-    public void augmenterSalaireSaliretNull(){
+    void augmenterSalaireSaliretNull(){
 
         //GIVEN
         Employe employe = new Employe("Doe", "John", null, LocalDate.now(), null, 1, 1.0);
@@ -138,7 +138,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
      *  hasMessageContaining("slaire negative")->si le retourr de message contien slaire negative
      */
 
-    public void augmenterSalaireSaliretNegative(){
+    void augmenterSalaireSaliretNegative(){
 
         //GIVEN
         Employe employe = new Employe("Doe", "John", null, LocalDate.now(), -1500d, 1, 1.0);
@@ -159,7 +159,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
      *  hasMessageContaining("negattive proc")->si le retourr de message contien negattive proc
      */
 
-    public void augmenterSalaireProcNegative(){
+    void augmenterSalaireProcNegative(){
 
         //GIVEN
         Employe employe = new Employe("Doe", "John", null, LocalDate.now(), 1500d, 1, 1.0);
@@ -188,7 +188,7 @@ public  void testGetNbAnneAncienteDateEbaucheInfoNow(){
             "2022, 5, 12, 10",
             "2032, 4, 4, 11"
     })
-    void testNbRtt(Integer year, Integer month, Integer day, Integer res) {
+    testNbRtt(Integer year, Integer month, Integer day, Integer res) {
         //GIVEN
         Employe employe = new Employe();
 
