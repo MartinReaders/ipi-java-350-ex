@@ -188,7 +188,7 @@ void testGetNbAnneAncienteDateEbaucheInfoNow(){
             "2022, 5, 12, 10",
             "2032, 4, 4, 11"
     })
-    testNbRtt(Integer year, Integer month, Integer day, Integer res) {
+    void testNbRtt(Integer year, Integer month, Integer day, Integer res) {
         //GIVEN
         Employe employe = new Employe();
 
