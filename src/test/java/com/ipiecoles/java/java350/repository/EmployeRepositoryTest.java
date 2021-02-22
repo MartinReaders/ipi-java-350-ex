@@ -19,7 +19,7 @@ import java.time.LocalDate;
 //@DataJdbcTest
 @SpringBootTest
 
-public class EmployeRepositoryTest {
+class EmployeRepositoryTest {
 
     @Autowired
     EmployeRepository employeRepository;
